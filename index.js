@@ -10,7 +10,8 @@ app.use(cors());
 
 app.use(express.urlencoded({extended:true}));
 exports.helloWorld = app.get('/', (req, res) => {
-  res.header('Access-Control-Allow-Origin', "*"); 
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Access-Control-Allow-Headers', "Origin, X-Requested-With, Content-Type, Accept");//さらに追加した
     //const keyword = req.query.url
     const keyword = encodeURI(req.query.keyword)
